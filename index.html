@@ -4,33 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My web 時計</title>
-    <!-- <script type="text/javascript" src="src/oclock.js"></script>
-    <script type="text/javascript" src="src/main.js"></script> -->
 </head>
 <body>
     <div id="clock-view">
         <p id="clock">hoge</p>
     </div>
     <script>
-        // カウントアップ
-        // let num = 0;
-        // function count() {
-        //     document.getElementById("clock").textContent = num;
-        //     num += 1;
-        // }
-        // count();
-        // setInterval(count, 1000);
-        // 時計
-
         function view(h, m, s) {
             const arr = [h, m, s];
             document.getElementById("clock").textContent = arr.join(" : ");
         }
 
         function clock() {
-            /* TODO:
-                現在時刻を読み込んで clock-view に表示
-            */
             let now = new Date();
             let hour = now.getHours();
             let minu = now.getMinutes();
