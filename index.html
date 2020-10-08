@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\style.css">
     <title>My web 時計</title>
 </head>
 <body>
-    <div id="clock-view">
-        <p id="clock">hoge</p>
+    <div class="clock-view">
+        <!-- <p id="clock">hoge</p> -->
+        <div id="clock-hour" class="clock-number">
+            <div id="clock-first">0</div>
+            <div id="clock-second">0</div>
+        </div>
+        <div id="clock-coro"> : </div>
+        <div id="clock-minu" class="clock-number">
+            <div id="clock-first">0</div>
+            <div id="clock-second">0</div>
+        </div>
+        <div id="clock-coro"> : </div>
+        <div id="clock-seco" class="clock-number">
+            <div id="clock-first">0</div>
+            <div id="clock-second">0</div>
+        </div>
     </div>
     <script>
         function view(h, m, s) {
-            const arr = [h, m, s];
-            document.getElementById("clock").textContent = arr.join(" : ");
+            // const arr = [h, m, s];
+            // document.getElementById("clock").textContent = arr.join(" : ");
+            function _view(element, num) {
+                element.firstElementChild.textContent = num / 10 | 0;
+                element.lastElementChild.textContent = num % 10;
+            }
+            // document.getElementById("clock-hour").textContent = h;
+            // document.getElementById("clock-minu").textContent = m;
+            // document.getElementById("clock-seco").textContent = s;
+            _view(document.getElementById("clock-hour"), h);
+            _view(document.getElementById("clock-minu"), m);
+            _view(document.getElementById("clock-seco"), s);
         }
 
         function clock() {

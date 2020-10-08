@@ -1,0 +1,7 @@
+.clock-view {
+    display: flex;
+}
+
+.clock-number {
+    display: flex;
+}
